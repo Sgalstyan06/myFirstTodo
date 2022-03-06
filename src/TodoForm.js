@@ -8,7 +8,7 @@ function TodoForm({onAdd}) {
         <form 
       onSubmit={(ev) => {
         ev.preventDefault();
-        onAdd(text);
+        if(text!=="")onAdd(text);        
         setText("");
       }}
     >

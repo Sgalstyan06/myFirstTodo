@@ -29,14 +29,17 @@ function App() {
       <div className="MainDiv">
         <TodoForm
           onAdd={(text) => {
-            setTodo([
-              ...todo,
-              {
-                id: Math.random(),
-                text: text,
-                isComplited: false,
-              },
-            ]);
+            if(todo.length<6){
+              setTodo([
+                ...todo,
+                {
+                  id: Math.random(),
+                  text: text,
+                  isComplited: false,
+                },
+              ]);
+            }
+            
           }}
         />
         <ToDoList
